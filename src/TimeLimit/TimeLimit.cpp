@@ -38,7 +38,7 @@ void TimeLimit::Step()
 	if (currentTime <= 0)
 	{
 		Sound::Se::Play(SE_FINISH);
-		g_CurrentSceneID = SCENE_ID_FIN_PLAY;
+		//g_CurrentSceneID = SCENE_ID_FIN_PLAY;
 	}
 }
 

@@ -19,7 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\FrameRate\FrameRate.cpp" />
+    <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Sound\Sound.cpp" />
+    <ClCompile Include="src\TimeLimit\TimeLimit.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\FrameRate\FrameRate.h" />
+    <ClInclude Include="src\Input\Input.h" />
+    <ClInclude Include="src\Scene\Scene.h" />
+    <ClInclude Include="src\Sound\Sound.h" />
+    <ClInclude Include="src\TimeLimit\TimeLimit.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
