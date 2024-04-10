@@ -39,6 +39,14 @@ void SceneClear::DrawClear()
 {
 	//画像描画
 	DrawGraph(0, 0, handle, true);
+
+	//文字の大きさ変更
+	SetFontSize(60);
+	DrawFormatString(300, 250, GetColor(0, 0, 0), "スコア");
+	SetFontSize(50);
+	DrawFormatString(370, 320, GetColor(0, 0, 0), "%d", viewScore);
+	//文字の大きさを元に戻す
+	SetFontSize(20);
 }
 
 //ゲームクリア終了処理

@@ -11,6 +11,8 @@ Mole mole;
 int score;		//スコア
 int viewScore;	//表示用スコア
 
+float scoreAddCountTime; //スコア加算カウント
+
 //画像
 
 //BGM
@@ -22,7 +24,15 @@ ScenePlay::~ScenePlay() {}
 // ゲームプレイ初期化
 void ScenePlay::InitPlay() 
 {
+	//カウントリセット
+	scoreAddCountTime = 0.0f;
+	//スコアリセット
+	score = 0;
+	viewScore = 0;
+
+	//時間制限
 	timeLimit.Init();
+	//モグラ
 	mole.Init();
 
 	// プレイ画像の読込
@@ -37,16 +47,51 @@ void ScenePlay::InitPlay()
 // ゲームプレイ通常処理
 void ScenePlay::StepPlay() 
 {
-	timeLimit.Step();
-	mole.Step();
+	timeLimit.Step();	//時間制限
+	mole.Step();	//モグラ
+
+	//スコア加算のカウント
+	scoreAddCountTime += 1.0f / FRAME_RATE;
+	//指定の時間になったら
+	if (scoreAddCountTime >= 0.1f)
+	{
+		//カウントをリセット
+		scoreAddCountTime = 0.0f;
+		//表示用がスコアより小さかったら
+		if (score > viewScore)
+		{
+			//加算
+			viewScore++;
+		}
+		//表示用がスコアより大きかったら
+		else if (score < viewScore)
+		{
+			//減算
+			viewScore--;
+		}
+		//表示用とスコアが同じだったら
+		else
+		{
+			//固定
+			viewScore = score;
+		}
+	}
 }
 
 // ゲームプレイ描画処理
 void ScenePlay::DrawPlay() 
 {
 	//画像描画
-	timeLimit.Draw();
-	mole.Draw();
+	timeLimit.Draw();	//時間制限
+	mole.Draw();	//モグラ
+
+	//文字の大きさ変更
+	SetFontSize(40);
+	DrawFormatString(650, 50, GetColor(255, 255, 255), "スコア");
+	SetFontSize(30);
+	DrawFormatString(700, 100, GetColor(255, 255, 255), "%d",viewScore);
+	//文字の大きさを元に戻す
+	SetFontSize(20);
 }
 
 //ゲームプレイ終了処理

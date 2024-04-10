@@ -57,5 +57,5 @@ void TimeLimit::Draw()
 //I—¹ˆ—
 void TimeLimit::Fin()
 {
-
+	g_CurrentSceneId = SCENE_ID_INIT_CLEAR;
 }

@@ -2,19 +2,22 @@
 
 const int MOLE_POP_TIME = 1;	//出現時間
 
+//モグラの種類
 enum MOLE
 {
-	NORMAL_MOLE,
-	SPECIAL_MOLE,
-	DAMAGE_MOLE,
+	NORMAL_MOLE,	//普通
+	SPECIAL_MOLE,	//特別
+	DAMAGE_MOLE,	//障害
 
-	MOLE_MAX_NUM,
+	MOLE_MAX_NUM,	//種類数
 };
 
+//得点
 const int NORMAL_POINT = 1;
 const int SPECIAL_POINT = 5;
 const int DAMAGE_POINT = -3;
 
+//画像パス
 const char MOLE_IMAGE_PATH[3][255] =
 {
 	"data/play/normalMole.png",
@@ -45,13 +48,13 @@ private:
 	float popCountTime;	//出現時間カウント
 
 public:
-	void Init();
-	void Step();
-	void Draw();
-	void Fin();
+	void Init();	//初期化
+	void Step();	//通常処理
+	void Draw();	//描画
+	void Fin();		//終了処理
 
-	int KeyPush();
-	void Pop();
-	void Move();
+	int KeyPush();	//どのキー押したか
+	void Pop();		//出現
+	void Move();	//動き
 
 };

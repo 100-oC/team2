@@ -2,32 +2,38 @@
 #include"../Scene/Scene.h"
 #include"Mole.h"
 
+//初期化
 void Mole::Init()
 {
+	//画像読み込み
 	for (int i = 0; i < MOLE_MAX_NUM; i++)
 	{
 		moleHandle[i] = LoadGraph(MOLE_IMAGE_PATH[i]);		//モグラ
 		groundHandle[i] = LoadGraph(GROUND_IMAGE_PATH[i]);	//地面
 	}
 
+	//各モグラの変数初期化
 	for (int i = 0; i < 9; i++)
 	{
-		y[i] = 0;
-		isUse[i] = false;
-		outTime[i] = 0.0f;
-		moleNum[i] = 0;
-		isAttack[i] = false;
+		y[i] = 0;				//座標
+		isUse[i] = false;		//使用フラグ
+		outTime[i] = 0.0f;		//出ている時間
+		moleNum[i] = 0;			//モグラの種類
+		isAttack[i] = false;	//たたいたフラグ
 	}
 
+	//出現インターバル
 	popCountTime = 0.0f;
 }
 
+//通常処理
 void Mole::Step()
 {
-	Pop();
-	Move();
+	Pop();	//出現
+	Move();	//動き
 }
 
+//描画
 void Mole::Draw()
 {
 	//モグラ789
@@ -87,16 +93,20 @@ void Mole::Draw()
 
 }
 
+//終了処理
 void Mole::Fin()
 {
 
 }
 
+//出現
 void Mole::Pop()
 {
+	//カウント
 	popCountTime += 1.0f / FRAME_RATE;
 
-	if (popCountTime >= 0.5f)
+	//指定の時間になったら
+	if (popCountTime >= 0.3f)
 	{
 		popCountTime = 0.0f;	//時間のリセット
 
@@ -111,8 +121,9 @@ void Mole::Pop()
 				isUse[popNum] = true;	//使用中
 				y[popNum] = 0;	//出現用座標
 
-				outTime[popNum] = GetRand(2) + 1;	//出現してる時間
+				outTime[popNum] = GetRand(1) + 1;	//出現してる時間(1~2)
 
+				//モグラの種類を設定
 				int moleN = GetRand(9);	//0~9
 
 				if		(moleN >= 0 && moleN <= 6)
@@ -135,10 +146,13 @@ void Mole::Pop()
 	}
 }
 
+//動き
 void Mole::Move()
 {
+	//穴の個数回す
 	for (int i = 0; i < 9; i++)
 	{
+		//使用されていたら以下
 		if (isUse[i])
 		{
 			//出現
@@ -159,7 +173,7 @@ void Mole::Move()
 					//地面に戻る
 					if (y[i] > 0)
 					{
-						y[i] -= 8;
+						y[i] -= 5;
 					}
 
 					//戻ったら
@@ -178,23 +192,28 @@ void Mole::Move()
 					//出ているところが押されていたら
 					if (i == KeyPush())
 					{
+						//たたかれたことにする
 						isAttack[i] = true;
 					}
 				}
 			}
 		}
 
+		//たたかれていたら
 		if (isAttack[i])
 		{
+			//引っこ抜く
 			if (y[i] < 50)
 			{
 				y[i] += 5;
 			}
 			else
 			{
+				//フラグ折る
 				isUse[i] = false;
 				isAttack[i] = false;
 
+				//得点を加算及び減算
 				switch (moleNum[i])
 				{
 				case NORMAL_MOLE:
@@ -223,6 +242,7 @@ void Mole::Move()
 	}
 }
 
+//どのキーを押されていたか（テンキー対応）
 int Mole::KeyPush()
 {
 	if (Input::Key::Push(KEY_INPUT_NUMPAD1))
