@@ -2,6 +2,7 @@
 
 class SceneClear {
 private:
+	int handle;
 
 public:
 	SceneClear();

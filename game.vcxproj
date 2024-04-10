@@ -22,6 +22,7 @@
     <ClCompile Include="src\FrameRate\FrameRate.cpp" />
     <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Mole\Mole.cpp" />
     <ClCompile Include="src\Scene\SceneClear.cpp" />
     <ClCompile Include="src\Scene\SceneGameOver.cpp" />
     <ClCompile Include="src\Scene\ScenePlay.cpp" />
@@ -32,6 +33,7 @@
   <ItemGroup>
     <ClInclude Include="src\FrameRate\FrameRate.h" />
     <ClInclude Include="src\Input\Input.h" />
+    <ClInclude Include="src\Mole\Mole.h" />
     <ClInclude Include="src\Scene\Scene.h" />
     <ClInclude Include="src\Scene\SceneClear.h" />
     <ClInclude Include="src\Scene\SceneGameOver.h" />

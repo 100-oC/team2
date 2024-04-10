@@ -32,3 +32,6 @@ enum SCENE_ID
 
 //　現在のシーンID
 extern SCENE_ID g_CurrentSceneId;
+
+extern int score;		//スコア
+extern int viewScore;	//表示用スコア

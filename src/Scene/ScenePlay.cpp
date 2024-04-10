@@ -2,7 +2,14 @@
 #include "../Scene/Scene.h"
 #include "ScenePlay.h"
 #include "../Input/Input.h"
+#include "../TimeLimit/TimeLimit.h"
+#include "../Mole/Mole.h"
 
+TimeLimit timeLimit;
+Mole mole;
+
+int score;		//スコア
+int viewScore;	//表示用スコア
 
 //画像
 
@@ -13,7 +20,11 @@ ScenePlay::ScenePlay() {}
 ScenePlay::~ScenePlay() {}
 
 // ゲームプレイ初期化
-void ScenePlay::InitPlay() {
+void ScenePlay::InitPlay() 
+{
+	timeLimit.Init();
+	mole.Init();
+
 	// プレイ画像の読込
 		
 	//BGM読込
@@ -24,17 +35,26 @@ void ScenePlay::InitPlay() {
 }
 
 // ゲームプレイ通常処理
-void ScenePlay::StepPlay() {
-
+void ScenePlay::StepPlay() 
+{
+	timeLimit.Step();
+	mole.Step();
 }
 
 // ゲームプレイ描画処理
-void ScenePlay::DrawPlay() {
+void ScenePlay::DrawPlay() 
+{
 	//画像描画
+	timeLimit.Draw();
+	mole.Draw();
 }
 
 //ゲームプレイ終了処理
-void ScenePlay::FinPlay() {
+void ScenePlay::FinPlay() 
+{
+	timeLimit.Fin();
+	mole.Fin();
+
 	//BGM後処理
 
 	//クリアフラグを確認して遷移先を決定

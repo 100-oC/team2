@@ -38,7 +38,7 @@ void TimeLimit::Step()
 	if (currentTime <= 0)
 	{
 		Sound::Se::Play(SE_FINISH);
-		//g_CurrentSceneID = SCENE_ID_FIN_PLAY;
+		g_CurrentSceneId = SCENE_ID_FIN_PLAY;
 	}
 }
 
@@ -47,11 +47,11 @@ void TimeLimit::Draw()
 {
 	//十の位
 	int imageNum = currentTime / 10;	//画像用数字
-	DrawGraph(30, SCREEN_SIZE_Y - 80, imageHandle[imageNum], true);
+	DrawGraph(30, 50, imageHandle[imageNum], true);
 	
 	//一の位
 	imageNum = currentTime % 10;	//画像用数字
-	DrawGraph(30+45, SCREEN_SIZE_Y - 80, imageHandle[imageNum], true);
+	DrawGraph(30+45, 50, imageHandle[imageNum], true);
 }
 
 //終了処理

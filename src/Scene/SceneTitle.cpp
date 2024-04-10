@@ -28,7 +28,8 @@ void SceneTitle::InitTitle()
 void SceneTitle::StepTitle() 
 {
 	//エンターかスペースを押したら
-	if (Input::Key::Push(KEY_INPUT_RETURN) || Input::Key::Push(KEY_INPUT_SPACE))
+	if (Input::Key::Push(KEY_INPUT_RETURN) || Input::Key::Push(KEY_INPUT_SPACE)||
+		Input::Mouse::Push(MOUSE_INPUT_LEFT))
 	{
 		g_CurrentSceneId = SCENE_ID_FIN_TITLE;
 	}
