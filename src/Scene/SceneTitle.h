@@ -3,6 +3,8 @@
 //タイトルクラス
 class SceneTitle {
 private:
+	int handle;
+
 public:
 	SceneTitle();
 	~SceneTitle();

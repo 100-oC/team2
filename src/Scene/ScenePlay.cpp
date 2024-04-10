@@ -38,21 +38,21 @@ void ScenePlay::FinPlay() {
 	//BGM後処理
 
 	//クリアフラグを確認して遷移先を決定
-	if (!isClear) {
+	/*if (!isClear) {
 		g_CurrentSceneId = SCENE_ID_INIT_GAMEOVER;
 	}
 	if (isClear) {
 		g_CurrentSceneId = SCENE_ID_INIT_CLEAR;
-	}
+	}*/
 }
 
 void ScenePlay::InitScreen()
 {
-	ScreenX = PlayerX - SCREEN_SIZE_X / 2;
+	//ScreenX = PlayerX - SCREEN_SIZE_X / 2;
 }
 
 //スクリーンのワールド座標
 void ScenePlay::StepScreen()
 {
-	ScreenX = PlayerX + 200 - SCREEN_SIZE_X / 2;
+	//ScreenX = PlayerX + 200 - SCREEN_SIZE_X / 2;
 }
