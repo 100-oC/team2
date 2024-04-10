@@ -28,6 +28,15 @@
     <Filter Include="ソース ファイル\Scene">
       <UniqueIdentifier>{110a4167-6d17-4141-b26e-43ef5ffed9f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Clear">
+      <UniqueIdentifier>{a1c43750-4723-4cc7-9a54-f38d3ce50ccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameOver">
+      <UniqueIdentifier>{731443ba-11ea-4919-b1a1-be98e8419590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Title">
+      <UniqueIdentifier>{94c653c8-e25d-4097-b4bb-b6836bdee2ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -45,6 +54,18 @@
     <ClCompile Include="src\Sound\Sound.cpp">
       <Filter>ソース ファイル\Sound</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scene\ScenePlay.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\SceneClear.cpp">
+      <Filter>ソース ファイル\Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\SceneGameOver.cpp">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\SceneTitle.cpp">
+      <Filter>ソース ファイル\Title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FrameRate\FrameRate.h">
@@ -61,6 +82,18 @@
     </ClInclude>
     <ClInclude Include="src\Scene\Scene.h">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\ScenePlay.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\SceneClear.h">
+      <Filter>ソース ファイル\Clear</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\SceneGameOver.h">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\SceneTitle.h">
+      <Filter>ソース ファイル\Title</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
