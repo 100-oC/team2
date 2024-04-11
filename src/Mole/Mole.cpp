@@ -162,7 +162,7 @@ void Mole::Move()
 			}
 
 			//oŒ»‚µ‚Ä‚¢‚½‚ç
-			else
+			else if(!isAttack[i])
 			{
 				//oŒ»ŠÔ‚ğŒ¸­
 				outTime[i] -= 1.0f / FRAME_RATE;

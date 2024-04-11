@@ -43,6 +43,9 @@
     <Filter Include="ソース ファイル\Mole">
       <UniqueIdentifier>{7c8b0d9d-51be-478c-ad1e-3dd490181aa4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\MathPlus">
+      <UniqueIdentifier>{610cbca8-e328-4aee-befd-3fc59545eb33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -75,6 +78,9 @@
     <ClCompile Include="src\Mole\Mole.cpp">
       <Filter>ソース ファイル\Mole</Filter>
     </ClCompile>
+    <ClCompile Include="src\MathPlus\MathPlus.cpp">
+      <Filter>ソース ファイル\MathPlus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FrameRate\FrameRate.h">
@@ -106,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="src\Mole\Mole.h">
       <Filter>ソース ファイル\Mole</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MathPlus\MathPlus.h">
+      <Filter>ソース ファイル\MathPlus</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
