@@ -9,6 +9,12 @@ void Mole::Init()
 	for (int i = 0; i < MOLE_MAX_NUM; i++)
 	{
 		moleHandle[i] = LoadGraph(MOLE_IMAGE_PATH[i]);		//モグラ
+		moleHandle2[i] = LoadGraph(MOLE_IMAGE_PATH2[i]);		//モグラ
+		
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
 		groundHandle[i] = LoadGraph(GROUND_IMAGE_PATH[i]);	//地面
 	}
 
@@ -39,57 +45,120 @@ void Mole::Draw()
 	//モグラ789
 	if (isUse[6])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 180 - y[6], 1.0f, 0.0f, moleHandle[moleNum[6]], true);
+		if (!isAttack[6])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 140 - y[6], 1.0f, 0.0f, moleHandle[moleNum[6]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 140 - y[6], 1.0f, 0.0f, moleHandle2[moleNum[6]], true);
+		}
 	}
 	if (isUse[7])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2, 180 - y[7], 1.0f, 0.0f, moleHandle[moleNum[7]], true);
+		if (!isAttack[7])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2, 140 - y[7], 1.0f, 0.0f, moleHandle[moleNum[7]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2, 140 - y[7], 1.0f, 0.0f, moleHandle2[moleNum[7]], true);
+		}
 	}
 	if (isUse[8])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 180 - y[8], 1.0f, 0.0f, moleHandle[moleNum[8]], true);
+		if (!isAttack[8])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 140 - y[8], 1.0f, 0.0f, moleHandle[moleNum[8]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 140 - y[8], 1.0f, 0.0f, moleHandle2[moleNum[8]], true);
+		}
 	}
 	
 	//地面789
-	DrawRotaGraph(SCREEN_SIZE_X / 2, 200, 1.0f, 0.0f, groundHandle[2], true);
+	DrawRotaGraph(SCREEN_SIZE_X / 2, 170, 1.0f, 0.0f, groundHandle[2], true);
 
 	//=================================
 
 	//モグラ456
 	if (isUse[3])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 330 - y[3], 1.0f, 0.0f, moleHandle[moleNum[3]], true);
+		if (!isAttack[3])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 300 - y[3], 1.0f, 0.0f, moleHandle[moleNum[3]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 300 - y[3], 1.0f, 0.0f, moleHandle2[moleNum[3]], true);
+		}
 	}
 	if (isUse[4])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2, 330 - y[4], 1.0f, 0.0f, moleHandle[moleNum[4]], true);
+		if (!isAttack[4])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2, 300 - y[4], 1.0f, 0.0f, moleHandle[moleNum[4]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2, 300 - y[4], 1.0f, 0.0f, moleHandle2[moleNum[4]], true);
+		}
 	}
 	if (isUse[5])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 330 - y[5], 1.0f, 0.0f, moleHandle[moleNum[5]], true);
+		if (!isAttack[5])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 300 - y[5], 1.0f, 0.0f, moleHandle[moleNum[5]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 300 - y[5], 1.0f, 0.0f, moleHandle2[moleNum[5]], true);
+		}
 	}
 	
 	//地面456
-	DrawRotaGraph(SCREEN_SIZE_X / 2, 350, 1.0f, 0.0f, groundHandle[1], true);
+	DrawRotaGraph(SCREEN_SIZE_X / 2, 330, 1.0f, 0.0f, groundHandle[1], true);
 
 	//==================================
 	
 	//モグラ123
 	if (isUse[0])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 480 - y[0], 1.0f, 0.0f, moleHandle[moleNum[0]], true);
+		if (!isAttack[0])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 450 - y[0], 1.0f, 0.0f, moleHandle[moleNum[0]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 450 - y[0], 1.0f, 0.0f, moleHandle2[moleNum[0]], true);
+		}
 	}
 	if (isUse[1])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2, 480 - y[1], 1.0f, 0.0f, moleHandle[moleNum[1]], true);
+		if (!isAttack[1])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2, 450 - y[1], 1.0f, 0.0f, moleHandle[moleNum[1]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2, 450 - y[1], 1.0f, 0.0f, moleHandle2[moleNum[1]], true);
+		}
 	}
 	if (isUse[2])
 	{
-		DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 480 - y[2], 1.0f, 0.0f, moleHandle[moleNum[2]], true);
+		if (!isAttack[2])
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 450 - y[2], 1.0f, 0.0f, moleHandle[moleNum[2]], true);
+		}
+		else
+		{
+			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 450 - y[2], 1.0f, 0.0f, moleHandle2[moleNum[2]], true);
+		}
 	}
 	
 	//地面123
-	DrawRotaGraph(SCREEN_SIZE_X / 2, 500, 1.0f, 0.0f, groundHandle[0], true);
+	DrawRotaGraph(SCREEN_SIZE_X / 2, 480, 1.0f, 0.0f, groundHandle[0], true);
 
 }
 
@@ -124,7 +193,7 @@ void Mole::Pop()
 				outTime[popNum] = GetRand(1) + 1;	//出現してる時間(1~2)
 
 				//モグラの種類を設定
-				int moleN = GetRand(9);	//0~9
+				int moleN = GetRand(11);	//0~11
 
 				if		(moleN >= 0 && moleN <= 6)
 				{
@@ -139,6 +208,11 @@ void Mole::Pop()
 				else if ( moleN <= 9)
 				{
 					moleNum[popNum] = SPECIAL_MOLE;	//スペシャルモグラ
+				}
+
+				else if (moleN >= 10 && moleN <= 11)
+				{
+					moleNum[popNum] = TIME_MOLE;	//タイム増加モグラ
 				}
 				
 			}
@@ -203,7 +277,7 @@ void Mole::Move()
 		if (isAttack[i])
 		{
 			//引っこ抜く
-			if (y[i] < 50)
+			if (y[i] < 70)
 			{
 				y[i] += 5;
 			}
@@ -231,6 +305,18 @@ void Mole::Move()
 				case DAMAGE_MOLE:
 
 					score += DAMAGE_POINT;
+
+					break;
+
+				case TIME_MOLE:
+
+					score += TIME_POINT;
+					currentTime += 5;
+
+					if (currentTime >= 99)
+					{
+						currentTime = 99;
+					}
 
 					break;
 

@@ -35,6 +35,11 @@ void ScenePlay::InitPlay()
 	//モグラ
 	mole.Init();
 
+	for (int i = 0; i < PLAY_IMAGE_MAX_NUM; i++)
+	{
+		handle[i] = LoadGraph(PLAY_IMAGE_PATH[i]);
+	}
+
 	// プレイ画像の読込
 		
 	//BGM読込
@@ -81,6 +86,11 @@ void ScenePlay::StepPlay()
 // ゲームプレイ描画処理
 void ScenePlay::DrawPlay() 
 {
+	for (int i = 0; i < PLAY_IMAGE_MAX_NUM; i++)
+	{
+		DrawGraph(0, 0, handle[i], true);
+	}
+
 	//画像描画
 	timeLimit.Draw();	//時間制限
 	mole.Draw();	//モグラ

@@ -9,7 +9,7 @@ private:
 	int imageHandle[10];	//画像ハンドル
 
 	float timeCount;	//時間計測
-	int currentTime;	//現在の時間
+	//int currentTime;	//現在の時間
 
 public:
 	//初期化
@@ -24,3 +24,5 @@ public:
 	//終了処理
 	void Fin();
 };
+
+extern int currentTime;	//現在の時間

@@ -3,6 +3,8 @@
 #include"../FrameRate/FrameRate.h"
 #include"../Scene/Scene.h"
 
+int currentTime;	//Œ»İ‚ÌŠÔ
+
 //‰Šú‰»
 void TimeLimit::Init()
 {

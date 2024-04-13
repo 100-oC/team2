@@ -4,6 +4,8 @@
 #include"../Sound/Sound.h"
 #include"../MathPlus/MathPlus.h"
 
+#include"../TimeLimit/TimeLimit.h"
+
 // define
 #define	SCREEN_SIZE_X	800	// X方向の画面サイズを指定
 #define	SCREEN_SIZE_Y	600	// Y方向の画面サイズを指定

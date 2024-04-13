@@ -8,6 +8,7 @@ enum MOLE
 	NORMAL_MOLE,	//普通
 	SPECIAL_MOLE,	//特別
 	DAMAGE_MOLE,	//障害
+	TIME_MOLE,		//時間増加
 
 	MOLE_MAX_NUM,	//種類数
 };
@@ -16,14 +17,25 @@ enum MOLE
 const int NORMAL_POINT = 1;
 const int SPECIAL_POINT = 5;
 const int DAMAGE_POINT = -3;
+const int TIME_POINT = 2;
 
 //画像パス
-const char MOLE_IMAGE_PATH[3][255] =
+const char MOLE_IMAGE_PATH[MOLE_MAX_NUM][255] =
 {
 	"data/play/normalMole.png",
 	"data/play/specialMole.png",
 	"data/play/damageMole.png",
+	"data/play/timeUpMole.png",
 };
+//叩いたあと
+const char MOLE_IMAGE_PATH2[MOLE_MAX_NUM][255] =
+{
+	"data/play/normalMole2.png",
+	"data/play/specialMole2.png",
+	"data/play/damageMole2.png",
+	"data/play/timeUpMole2.png",
+};
+
 
 const char GROUND_IMAGE_PATH[3][255] =
 {
@@ -36,6 +48,7 @@ class Mole
 {
 private:
 	int moleHandle[MOLE_MAX_NUM];	//もぐらハンドル
+	int moleHandle2[MOLE_MAX_NUM];	//もぐらハンドル
 	int groundHandle[3];	//地面の画像ハンドル
 
 	int y[9];	//座標

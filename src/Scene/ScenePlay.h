@@ -1,7 +1,22 @@
 #pragma once
 
+enum PLAY_IMAGE
+{
+	PLAY_BACKGR,
+	PLAY_FRAME,
+
+	PLAY_IMAGE_MAX_NUM,
+};
+
+const char PLAY_IMAGE_PATH[2][255] =
+{
+	"data/play/background.png",
+	"data/play/frame.png",
+};
+
 class ScenePlay {
 private:
+	int handle[PLAY_IMAGE_MAX_NUM];	//‰æ‘œƒnƒ“ƒhƒ‹
 
 public:
 	ScenePlay();
