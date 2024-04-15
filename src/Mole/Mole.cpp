@@ -175,7 +175,7 @@ void Mole::Pop()
 	popCountTime += 1.0f / FRAME_RATE;
 
 	//指定の時間になったら
-	if (popCountTime >= 0.3f)
+	if (popCountTime >= 0.2f)
 	{
 		popCountTime = 0.0f;	//時間のリセット
 
@@ -190,10 +190,11 @@ void Mole::Pop()
 				isUse[popNum] = true;	//使用中
 				y[popNum] = 0;	//出現用座標
 
-				outTime[popNum] = GetRand(1) + 1;	//出現してる時間(1~2)
+				//outTime[popNum] = GetRand(1);	//出現してる時間(0~1)
+				outTime[popNum] = 1.0f;	//出現してる時間(0~1)
 
 				//モグラの種類を設定
-				int moleN = GetRand(11);	//0~11
+				int moleN = GetRand(10);	//0~11
 
 				if		(moleN >= 0 && moleN <= 6)
 				{
@@ -210,7 +211,7 @@ void Mole::Pop()
 					moleNum[popNum] = SPECIAL_MOLE;	//スペシャルモグラ
 				}
 
-				else if (moleN >= 10 && moleN <= 11)
+				else if (moleN >= 10)
 				{
 					moleNum[popNum] = TIME_MOLE;	//タイム増加モグラ
 				}
@@ -311,7 +312,7 @@ void Mole::Move()
 				case TIME_MOLE:
 
 					score += TIME_POINT;
-					currentTime += 5;
+					currentTime += 3;
 
 					if (currentTime >= 99)
 					{
