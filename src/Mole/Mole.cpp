@@ -301,6 +301,25 @@ void Mole::Move()
 
 						Sound::Se::Play(SE_PIKO);
 					}
+
+					//マウスでたたく
+					int mX, mY;
+					if (Input::Mouse::Push(MOUSE_INPUT_LEFT))
+					{
+						// マウスの位置を取得
+						GetMousePoint(&mX, &mY);
+
+						if (GetDistance(x[i], defaultY[i] + y[i]-100, mX, mY) < 50)
+						{
+							//たたかれたことにする
+							isAttack[i] = true;
+
+							Effect::Play(EFFECT_TYPE_PIKO, (float)x[i], (float)defaultY[i] + y[i] - 130);
+							Effect::Play(EFFECT_TYPE_PIKOHAN, (float)x[i] + 30, (float)defaultY[i] + y[i] - 200);
+
+							Sound::Se::Play(SE_PIKO);
+						}
+					}
 				}
 			}
 		}
