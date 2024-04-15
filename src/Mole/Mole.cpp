@@ -309,7 +309,7 @@ void Mole::Move()
 						// マウスの位置を取得
 						GetMousePoint(&mX, &mY);
 
-						if (GetDistance(x[i], defaultY[i] + y[i]-100, mX, mY) < 50)
+						if (GetDistance((float)x[i], (float)defaultY[i] + y[i]-100, (float)mX, (float)mY) < 50)
 						{
 							//たたかれたことにする
 							isAttack[i] = true;

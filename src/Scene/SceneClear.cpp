@@ -40,6 +40,12 @@ void SceneClear::InitClear()
 	Sound::Bgm::Play(BGM_RESULT);
 
 	g_CurrentSceneId = SCENE_ID_LOOP_CLEAR;
+
+	if (playData.highScore < score)
+	{
+		playData.highScore = score;
+		SAL.Save();
+	}
 }
 
 // ゲームクリア通常処理
@@ -173,9 +179,11 @@ void SceneClear::DrawClear()
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, fade);
 	//文字の大きさ変更
 	SetFontSize(60);
-	DrawFormatString(300, 150+ scoreY, GetColor(0, 0, 0), "スコア");
+	DrawFormatString(300, 100+ scoreY, GetColor(0, 0, 0), "スコア");
 	SetFontSize(50);
-	DrawFormatString(370, 220+ scoreY, GetColor(0, 0, 0), "%d", viewScore);
+	DrawFormatString(350, 170+ scoreY, GetColor(0, 0, 0), "%d", score);
+	SetFontSize(30);
+	DrawFormatString(270, 230 + scoreY, GetColor(0, 0, 0), "ハイスコア：%d", playData.highScore);
 	//文字の大きさを元に戻す
 	SetFontSize(20);
 	//表示を元に戻す

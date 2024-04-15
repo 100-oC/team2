@@ -49,6 +49,9 @@
     <Filter Include="ソース ファイル\Effect">
       <UniqueIdentifier>{5befb475-653a-42dc-b224-304a641a48c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\save">
+      <UniqueIdentifier>{f270f0a2-0b4e-467d-a545-c55f186bca9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -87,6 +90,9 @@
     <ClCompile Include="src\Effect\Effect.cpp">
       <Filter>ソース ファイル\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="src\save\Save.cpp">
+      <Filter>ソース ファイル\save</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FrameRate\FrameRate.h">
@@ -124,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="src\Effect\Effect.h">
       <Filter>ソース ファイル\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="src\save\Save.h">
+      <Filter>ソース ファイル\save</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

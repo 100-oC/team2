@@ -34,6 +34,8 @@ void SceneTitle::InitTitle()
 	Sound::Bgm::Play(BGM_TITLE);
 
 	g_CurrentSceneId = SCENE_ID_LOOP_TITLE;
+
+	SAL.Load();
 }
 
 // ƒ^ƒCƒgƒ‹’Êíˆ—

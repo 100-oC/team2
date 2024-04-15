@@ -6,6 +6,7 @@
 #include"../Effect/Effect.h"
 
 #include"../TimeLimit/TimeLimit.h"
+#include"../save/Save.h"
 
 // define
 #define	SCREEN_SIZE_X	800	// X方向の画面サイズを指定
