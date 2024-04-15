@@ -29,8 +29,9 @@ void SceneTitle::InitTitle()
 	progress = 0;
 
 	//BGM読込
-
+	Sound::Init();
 	//BGM再生
+	Sound::Bgm::Play(BGM_TITLE);
 
 	g_CurrentSceneId = SCENE_ID_LOOP_TITLE;
 }
@@ -49,7 +50,7 @@ void SceneTitle::StepTitle()
 		}
 		else
 		{
-			y[TITLE_GROUND] -= 2.0f;
+			y[TITLE_GROUND] -= 2;
 		}
 
 		//タイトル
@@ -59,7 +60,7 @@ void SceneTitle::StepTitle()
 		}
 		else
 		{
-			y[TITLE_TITLE] -= 5.0f;
+			y[TITLE_TITLE] -= 5;
 		}
 
 		//以上が完成していると進行
@@ -99,6 +100,8 @@ void SceneTitle::StepTitle()
 			Input::Mouse::Push(MOUSE_INPUT_LEFT)|| Input::Key::Push(KEY_INPUT_NUMPADENTER))
 		{
 			g_CurrentSceneId = SCENE_ID_FIN_TITLE;
+
+			Sound::Se::Play(SE_START);
 		}
 
 		break;
@@ -137,7 +140,7 @@ void SceneTitle::DrawTitle()
 
 	//fadeで透明度変更
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, fade);
-	DrawGraphF(0, y[TITLE_GEMESTART], handle[TITLE_GEMESTART], true);	//タイトル
+	DrawGraph(0, y[TITLE_GEMESTART], handle[TITLE_GEMESTART], true);	//タイトル
 	//表示を元に戻す
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 }
@@ -146,6 +149,6 @@ void SceneTitle::DrawTitle()
 void SceneTitle::FinTitle() 
 {
 	//BGM後処理
-
+	Sound::Bgm::StopSound(BGM_TITLE);
 	g_CurrentSceneId = SCENE_ID_INIT_PLAY;
 }

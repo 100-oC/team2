@@ -13,35 +13,35 @@ EffectInfo Effect::effectInfo[EFFECT_MAX_NUM];
 const char effectFilePath[EFFECT_TYPE_NUM][256] =
 {
 	"data/play/EffectExplosion.png",	//衝撃波
-	"data/play/pikopiko.png",			//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
+	"data/play/pikopiko128.png",			//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
 };
 
 //各エフェクトのアニメ数
 const int effectAnimeImgNum[EFFECT_TYPE_NUM] =
 {
 	4,	//衝撃波
-	1,	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
+	2,	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
 };
 
 //各エフェクトの画像分割数 [0] = x, [1] = y
 const int effectImageSplitNum[EFFECT_TYPE_NUM][2] =
 {
 	{ 2, 2,},	//衝撃波
-	{ 1, 1,},	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
+	{ 2, 1,},	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
 };
 
 //エフェクトの画像サイズ
 const int effectImageSize[EFFECT_TYPE_NUM][2] =
 {
 	{ 64, 64,},		//衝撃波
-	{ 104, 60,},	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
+	{ 128, 128,},	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
 };
 
 //各エフェクトのアニメ画像切り替え時間
 const float effectChageTime[EFFECT_TYPE_NUM] =
 {
-	0.1f,	//衝撃波
-	0.5f,	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
+	0.07f,	//衝撃波
+	0.15f,	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
 };
 
 //==============================================================================================
@@ -158,10 +158,10 @@ void Effect::Draw(int type)
 			//システム
 		case 0: {
 
-			if (effectInfo[effect_index].type != EFFECT_TYPE_PIKO)
+			/*if (effectInfo[effect_index].type != EFFECT_TYPE_PIKO)
 			{
 				continue;
-			}
+			}*/
 
 			//★使用中なら現在のアニメ番号で描画する
 			if (effectInfo[effect_index].isUse)

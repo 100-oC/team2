@@ -45,6 +45,7 @@ void ScenePlay::InitPlay()
 	//BGMì«çû
 
 	//BGMçƒê∂
+	Sound::Bgm::Play(BGM_PLAY);
 
 	g_CurrentSceneId = SCENE_ID_LOOP_PLAY;
 }
@@ -113,6 +114,8 @@ void ScenePlay::FinPlay()
 {
 	timeLimit.Fin();
 	mole.Fin();
+
+	Sound::Bgm::StopSound(BGM_PLAY);
 
 	//BGMå„èàóù
 

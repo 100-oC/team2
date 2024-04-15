@@ -296,8 +296,10 @@ void Mole::Move()
 						//‚½‚½‚©‚ê‚½‚±‚Æ‚É‚·‚é
 						isAttack[i] = true;
 
-						Effect::Play(EFFECT_TYPE_PIKO, x[i], defaultY[i] + y[i]-130);
-						Effect::Play(EFFECT_TYPE_PIKOHAN, x[i], defaultY[i] + y[i]);
+						Effect::Play(EFFECT_TYPE_PIKO, (float)x[i], (float)defaultY[i] + y[i]-130);
+						Effect::Play(EFFECT_TYPE_PIKOHAN, (float)x[i]+30, (float)defaultY[i] + y[i]-200);
+
+						Sound::Se::Play(SE_PIKO);
 					}
 				}
 			}
@@ -329,12 +331,14 @@ void Mole::Move()
 				case SPECIAL_MOLE:
 
 					score += SPECIAL_POINT;
+					Sound::Se::Play(SE_SPECIAL);
 
 					break;
 
 				case DAMAGE_MOLE:
 
 					score += DAMAGE_POINT;
+					Sound::Se::Play(SE_BAKUHA);
 
 					break;
 
@@ -347,6 +351,8 @@ void Mole::Move()
 					{
 						currentTime = 99;
 					}
+
+					Sound::Se::Play(SE_TIME);
 
 					break;
 

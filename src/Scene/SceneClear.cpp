@@ -37,6 +37,7 @@ void SceneClear::InitClear()
 	//BGMì«çû
 
 	//BGMçƒê∂
+	Sound::Bgm::Play(BGM_RESULT);
 
 	g_CurrentSceneId = SCENE_ID_LOOP_CLEAR;
 }
@@ -147,6 +148,7 @@ void SceneClear::StepClear()
 			Input::Mouse::Push(MOUSE_INPUT_LEFT) || Input::Key::Push(KEY_INPUT_NUMPADENTER))
 		{
 			g_CurrentSceneId = SCENE_ID_FIN_CLEAR;
+			Sound::Se::Play(SE_START);
 		}
 
 		break;
@@ -185,4 +187,6 @@ void SceneClear::FinClear()
 {
 
 	g_CurrentSceneId = SCENE_ID_INIT_TITLE;
+
+	Sound::Bgm::StopSound(BGM_RESULT);
 }
