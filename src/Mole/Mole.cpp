@@ -30,6 +30,31 @@ void Mole::Init()
 
 	//出現インターバル
 	popCountTime = 0.0f;
+
+	//座標設定
+	x[0] = SCREEN_SIZE_X / 2 - 150;
+	x[1] = SCREEN_SIZE_X / 2;
+	x[2] = SCREEN_SIZE_X / 2 + 150;
+
+	x[3] = SCREEN_SIZE_X / 2 - 150;
+	x[4] = SCREEN_SIZE_X / 2;
+	x[5] = SCREEN_SIZE_X / 2 + 150;
+
+	x[6] = SCREEN_SIZE_X / 2 - 150;
+	x[7] = SCREEN_SIZE_X / 2;
+	x[8] = SCREEN_SIZE_X / 2 + 150;
+
+	//元の位置Y
+	defaultY[0] = 450;
+	defaultY[1] = 450;
+	defaultY[2] = 450;
+	defaultY[3] = 300;
+	defaultY[4] = 300;
+	defaultY[5] = 300;
+	defaultY[6] = 140;
+	defaultY[7] = 140;
+	defaultY[8] = 140;
+
 }
 
 //通常処理
@@ -47,33 +72,34 @@ void Mole::Draw()
 	{
 		if (!isAttack[6])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 140 - y[6], 1.0f, 0.0f, moleHandle[moleNum[6]], true);
+			DrawRotaGraph(x[6], 140 - y[6], 1.0f, 0.0f, moleHandle[moleNum[6]], true);
+			
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 140 - y[6], 1.0f, 0.0f, moleHandle2[moleNum[6]], true);
+			DrawRotaGraph(x[6], 140 - y[6], 1.0f, 0.0f, moleHandle2[moleNum[6]], true);
 		}
 	}
 	if (isUse[7])
 	{
 		if (!isAttack[7])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2, 140 - y[7], 1.0f, 0.0f, moleHandle[moleNum[7]], true);
+			DrawRotaGraph(x[7], 140 - y[7], 1.0f, 0.0f, moleHandle[moleNum[7]], true);
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2, 140 - y[7], 1.0f, 0.0f, moleHandle2[moleNum[7]], true);
+			DrawRotaGraph(x[7], 140 - y[7], 1.0f, 0.0f, moleHandle2[moleNum[7]], true);
 		}
 	}
 	if (isUse[8])
 	{
 		if (!isAttack[8])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 140 - y[8], 1.0f, 0.0f, moleHandle[moleNum[8]], true);
+			DrawRotaGraph(x[8], 140 - y[8], 1.0f, 0.0f, moleHandle[moleNum[8]], true);
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 140 - y[8], 1.0f, 0.0f, moleHandle2[moleNum[8]], true);
+			DrawRotaGraph(x[8], 140 - y[8], 1.0f, 0.0f, moleHandle2[moleNum[8]], true);
 		}
 	}
 	
@@ -87,33 +113,33 @@ void Mole::Draw()
 	{
 		if (!isAttack[3])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 300 - y[3], 1.0f, 0.0f, moleHandle[moleNum[3]], true);
+			DrawRotaGraph(x[3], 300 - y[3], 1.0f, 0.0f, moleHandle[moleNum[3]], true);
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 300 - y[3], 1.0f, 0.0f, moleHandle2[moleNum[3]], true);
+			DrawRotaGraph(x[3], 300 - y[3], 1.0f, 0.0f, moleHandle2[moleNum[3]], true);
 		}
 	}
 	if (isUse[4])
 	{
 		if (!isAttack[4])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2, 300 - y[4], 1.0f, 0.0f, moleHandle[moleNum[4]], true);
+			DrawRotaGraph(x[4], 300 - y[4], 1.0f, 0.0f, moleHandle[moleNum[4]], true);
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2, 300 - y[4], 1.0f, 0.0f, moleHandle2[moleNum[4]], true);
+			DrawRotaGraph(x[4], 300 - y[4], 1.0f, 0.0f, moleHandle2[moleNum[4]], true);
 		}
 	}
 	if (isUse[5])
 	{
 		if (!isAttack[5])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 300 - y[5], 1.0f, 0.0f, moleHandle[moleNum[5]], true);
+			DrawRotaGraph(x[5], 300 - y[5], 1.0f, 0.0f, moleHandle[moleNum[5]], true);
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 300 - y[5], 1.0f, 0.0f, moleHandle2[moleNum[5]], true);
+			DrawRotaGraph(x[5], 300 - y[5], 1.0f, 0.0f, moleHandle2[moleNum[5]], true);
 		}
 	}
 	
@@ -127,33 +153,33 @@ void Mole::Draw()
 	{
 		if (!isAttack[0])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 450 - y[0], 1.0f, 0.0f, moleHandle[moleNum[0]], true);
+			DrawRotaGraph(x[0], 450 - y[0], 1.0f, 0.0f, moleHandle[moleNum[0]], true);
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 - 150, 450 - y[0], 1.0f, 0.0f, moleHandle2[moleNum[0]], true);
+			DrawRotaGraph(x[0], 450 - y[0], 1.0f, 0.0f, moleHandle2[moleNum[0]], true);
 		}
 	}
 	if (isUse[1])
 	{
 		if (!isAttack[1])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2, 450 - y[1], 1.0f, 0.0f, moleHandle[moleNum[1]], true);
+			DrawRotaGraph(x[1], 450 - y[1], 1.0f, 0.0f, moleHandle[moleNum[1]], true);
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2, 450 - y[1], 1.0f, 0.0f, moleHandle2[moleNum[1]], true);
+			DrawRotaGraph(x[1], 450 - y[1], 1.0f, 0.0f, moleHandle2[moleNum[1]], true);
 		}
 	}
 	if (isUse[2])
 	{
 		if (!isAttack[2])
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 450 - y[2], 1.0f, 0.0f, moleHandle[moleNum[2]], true);
+			DrawRotaGraph(x[2], 450 - y[2], 1.0f, 0.0f, moleHandle[moleNum[2]], true);
 		}
 		else
 		{
-			DrawRotaGraph(SCREEN_SIZE_X / 2 + 150, 450 - y[2], 1.0f, 0.0f, moleHandle2[moleNum[2]], true);
+			DrawRotaGraph(x[2], 450 - y[2], 1.0f, 0.0f, moleHandle2[moleNum[2]], true);
 		}
 	}
 	
@@ -269,6 +295,9 @@ void Mole::Move()
 					{
 						//たたかれたことにする
 						isAttack[i] = true;
+
+						Effect::Play(EFFECT_TYPE_PIKO, x[i], defaultY[i] + y[i]-130);
+						Effect::Play(EFFECT_TYPE_PIKOHAN, x[i], defaultY[i] + y[i]);
 					}
 				}
 			}

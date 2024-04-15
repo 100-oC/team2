@@ -52,6 +52,8 @@ private:
 	int groundHandle[3];	//地面の画像ハンドル
 
 	int y[9];	//座標
+	int defaultY[9];	//元の座標
+	int x[9];
 	int moleNum[9];	//モグラの種類
 	bool isUse[9];	//使用フラグ
 	bool isAttack[9];	//たたいたフラグ
@@ -69,5 +71,5 @@ public:
 	int KeyPush();	//どのキー押したか
 	void Pop();		//出現
 	void Move();	//動き
-
+	
 };

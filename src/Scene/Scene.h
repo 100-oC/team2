@@ -3,6 +3,7 @@
 #include"../Input/Input.h"
 #include"../Sound/Sound.h"
 #include"../MathPlus/MathPlus.h"
+#include"../Effect/Effect.h"
 
 #include"../TimeLimit/TimeLimit.h"
 

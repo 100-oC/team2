@@ -12,15 +12,15 @@ EffectInfo Effect::effectInfo[EFFECT_MAX_NUM];
 //エフェクトのファイルパス
 const char effectFilePath[EFFECT_TYPE_NUM][256] =
 {
-	"data/effect/EffectExplosion.png",	//衝撃波
-	"data/effect/pikopiko.png",			//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
+	"data/play/EffectExplosion.png",	//衝撃波
+	"data/play/pikopiko.png",			//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
 };
 
 //各エフェクトのアニメ数
 const int effectAnimeImgNum[EFFECT_TYPE_NUM] =
 {
-	1,	//衝撃波
-	4,	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
+	4,	//衝撃波
+	1,	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
 };
 
 //各エフェクトの画像分割数 [0] = x, [1] = y
@@ -40,7 +40,7 @@ const int effectImageSize[EFFECT_TYPE_NUM][2] =
 //各エフェクトのアニメ画像切り替え時間
 const float effectChageTime[EFFECT_TYPE_NUM] =
 {
-	0.15f,	//衝撃波
+	0.1f,	//衝撃波
 	0.5f,	//ﾋﾟｺﾋﾟｺﾊﾝﾏｰ
 };
 

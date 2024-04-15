@@ -1,8 +1,6 @@
 #include "DxLib.h"
 #include "../Scene/Scene.h"
 #include "ScenePlay.h"
-#include "../Input/Input.h"
-#include "../TimeLimit/TimeLimit.h"
 #include "../Mole/Mole.h"
 
 TimeLimit timeLimit;
@@ -40,7 +38,9 @@ void ScenePlay::InitPlay()
 		handle[i] = LoadGraph(PLAY_IMAGE_PATH[i]);
 	}
 
-	// プレイ画像の読込
+	Effect::Init();
+	Effect::Load(EFFECT_TYPE_PIKO, 10);
+	Effect::Load(EFFECT_TYPE_PIKOHAN, 10);
 		
 	//BGM読込
 
@@ -81,6 +81,8 @@ void ScenePlay::StepPlay()
 			viewScore = score;
 		}
 	}
+
+	Effect::Step();
 }
 
 // ゲームプレイ描画処理
@@ -94,6 +96,8 @@ void ScenePlay::DrawPlay()
 	//画像描画
 	timeLimit.Draw();	//時間制限
 	mole.Draw();	//モグラ
+
+	Effect::Draw();
 
 	//文字の大きさ変更
 	SetFontSize(40);
