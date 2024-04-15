@@ -46,6 +46,9 @@
     <Filter Include="ソース ファイル\MathPlus">
       <UniqueIdentifier>{610cbca8-e328-4aee-befd-3fc59545eb33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Effect">
+      <UniqueIdentifier>{5befb475-653a-42dc-b224-304a641a48c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -81,6 +84,9 @@
     <ClCompile Include="src\MathPlus\MathPlus.cpp">
       <Filter>ソース ファイル\MathPlus</Filter>
     </ClCompile>
+    <ClCompile Include="src\Effect\Effect.cpp">
+      <Filter>ソース ファイル\Effect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FrameRate\FrameRate.h">
@@ -115,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="src\MathPlus\MathPlus.h">
       <Filter>ソース ファイル\MathPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Effect\Effect.h">
+      <Filter>ソース ファイル\Effect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

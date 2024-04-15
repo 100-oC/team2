@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Effect\Effect.cpp" />
     <ClCompile Include="src\FrameRate\FrameRate.cpp" />
     <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -32,6 +33,7 @@
     <ClCompile Include="src\TimeLimit\TimeLimit.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Effect\Effect.h" />
     <ClInclude Include="src\FrameRate\FrameRate.h" />
     <ClInclude Include="src\Input\Input.h" />
     <ClInclude Include="src\MathPlus\MathPlus.h" />
