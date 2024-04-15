@@ -96,7 +96,7 @@ void SceneTitle::StepTitle()
 
 		//エンターかスペースを押したら
 		if (Input::Key::Push(KEY_INPUT_RETURN) || Input::Key::Push(KEY_INPUT_SPACE) ||
-			Input::Mouse::Push(MOUSE_INPUT_LEFT))
+			Input::Mouse::Push(MOUSE_INPUT_LEFT)|| Input::Key::Push(KEY_INPUT_NUMPADENTER))
 		{
 			g_CurrentSceneId = SCENE_ID_FIN_TITLE;
 		}
@@ -109,14 +109,18 @@ void SceneTitle::StepTitle()
 	}
 
 	//画面未完成時に左クリックで完成
-	if (progress != 1 && Input::Mouse::Push(MOUSE_INPUT_LEFT))
+	if (progress != 1)
 	{
-		//座標の設定
-		y[TITLE_GROUND] = 0;
-		y[TITLE_TITLE] = 0;
+		if (Input::Mouse::Push(MOUSE_INPUT_LEFT) || Input::Key::Push(KEY_INPUT_RETURN)||
+			Input::Key::Push(KEY_INPUT_NUMPADENTER))
+		{
+			//座標の設定
+			y[TITLE_GROUND] = 0;
+			y[TITLE_TITLE] = 0;
 
-		//入力待ちへ
-		progress = 1;
+			//入力待ちへ
+			progress = 1;
+		}
 	}
 	
 }
