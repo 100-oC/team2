@@ -181,7 +181,7 @@ void SceneClear::DrawClear()
 	SetFontSize(60);
 	DrawFormatString(300, 100+ scoreY, GetColor(0, 0, 0), "スコア");
 	SetFontSize(50);
-	DrawFormatString(350, 170+ scoreY, GetColor(0, 0, 0), "%d", score);
+	DrawFormatString(350, 170+ scoreY, GetColor(0, 0, 0), "%3d", score);
 	SetFontSize(30);
 	DrawFormatString(270, 230 + scoreY, GetColor(0, 0, 0), "ハイスコア：%d", playData.highScore);
 	//文字の大きさを元に戻す

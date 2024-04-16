@@ -15,7 +15,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 
 	//ウィンドウの名前を変える
-	SetMainWindowText("ﾃｷﾄｰ");
+	SetMainWindowText("もぐらたたき");
 
 	//ウィンドウの状態を設定する
 	ChangeWindowMode(true);
